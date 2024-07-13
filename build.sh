@@ -1,6 +1,6 @@
 #!/bin/bash
 data=$(curl -s https://divestos.org/fdroid/official/index-v1.json)
-apk=$(echo $data | jq -r '.packages."us.spotco.fennec_dos"[0].apkName')
+apk=$(echo $data | jq -r '.packages."us.spotco.fennec_dos"[1].apkName')
 wget -q $(echo "https://divestos.org/fdroid/official/$apk") -O latest.apk
 
 wget -q https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar -O apktool.jar
